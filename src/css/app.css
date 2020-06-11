@@ -1,0 +1,78 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+@variants responsive {
+  .justify-self-start {
+    justify-self: start;
+  }
+
+  .justify-self-center {
+    justify-self: center;
+  }
+
+  .justify-self-end {
+    justify-self: end;
+  }
+}
+
+.link {
+  @apply font-semibold transition duration-200 ease-in-out border-b-2 border-transparent;
+
+  &:hover {
+    @apply border-gray-800;
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.button {
+  @apply inline-flex items-center justify-center font-medium font-semibold leading-4 text-indigo-700 transition duration-150 ease-in-out border;
+}
+
+.button-primary {
+  @apply bg-indigo-100 border-transparent rounded;
+
+  &:hover {
+    @apply bg-indigo-50;
+  }
+
+  &:focus {
+    @apply border-indigo-300 outline-none shadow-outline-indigo;
+  }
+
+  &:active {
+    @apply bg-indigo-200;
+  }
+}
+
+.button-outlined {
+  @apply bg-white border-indigo-300 rounded-md;
+
+  &:hover {
+    @apply text-indigo-500;
+  }
+
+  &:focus {
+    @apply border-blue-300 shadow-outline-blue;
+  }
+
+  &:active {
+    @apply text-indigo-800 bg-indigo-50;
+  }
+}
+
+.button-xs {
+  @apply px-2 py-1 text-xs;
+}
+
+.button-sm {
+  @apply px-3 py-2 text-sm;
+}

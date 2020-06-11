@@ -1,0 +1,35 @@
+stripe products create \
+  --name="Product A" \
+  --type="good" \
+  -d "attributes[]=name"
+
+stripe skus create \
+  --price=49900 \
+  --currency=czk \
+  -d "inventory[type]"=infinite \
+  -d "attributes[name]"="Product A" \
+  --product=
+
+stripe products create \
+  --name="Product B" \
+  --type="good" \
+  -d "attributes[]=name"
+
+stripe skus create \
+  --price=99900 \
+  --currency=czk \
+  -d "inventory[type]"=infinite \
+  -d "attributes[name]"="Product B" \
+  --product=
+
+stripe products create \
+  --name="Product C" \
+  --type="good" \
+  -d "attributes[]=name"
+
+stripe skus create \
+  --price=199900 \
+  --currency=czk \
+  -d "inventory[type]"=infinite \
+  -d "attributes[name]"="Product C" \
+  --product=
