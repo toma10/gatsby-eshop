@@ -5,12 +5,16 @@ export default function IncrementDecrementField({
   onIncrement,
   onDecrement,
 }) {
+  function handleIncrement() {
+    onIncrement()
+  }
+
   return (
     <span className="inline-flex flex-col items-center ">
       <button
         type="button"
         className="p-0.5 text-gray-800 transition duration-150 ease-in-out bg-white hover:text-gray-600 focus:z-10 focus:outline-none focus:text-gray-600 active:text-gray-600"
-        onClick={onIncrement}
+        onClick={handleIncrement}
         aria-label="Increment"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

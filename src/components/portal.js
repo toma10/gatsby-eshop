@@ -1,31 +1,34 @@
-import { Component } from "react"
+import React from "react"
 import ReactDOM from "react-dom"
 
-const portalRoot =
-  typeof document !== `undefined` ? document.getElementById("portal") : null
+let portalRoot =
+  typeof document !== "undefined" ? document.getElementById("portal") : null
 
-export default class Portal extends Component {
-  constructor() {
-    super()
-    this.el =
-      typeof document !== `undefined` ? document.createElement("div") : null
-  }
+if (!portalRoot && typeof document !== "undefined") {
+  portalRoot = document.createElement("div")
+  portalRoot.setAttribute("id", "portal")
+  document.body.appendChild(portalRoot)
+}
 
-  componentDidMount = () => {
-    portalRoot.appendChild(this.el)
-  }
+export default function Portal({ children }) {
+  const el = React.useRef(
+    typeof document !== "undefined" ? document.createElement("div") : null
+  )
 
-  componentWillUnmount = () => {
-    portalRoot.removeChild(this.el)
-  }
-
-  render() {
-    const { children } = this.props
-
-    if (this.el) {
-      return ReactDOM.createPortal(children, this.el)
-    } else {
-      return null
+  React.useLayoutEffect(() => {
+    if (!portalRoot) {
+      return
     }
+
+    const currentEl = el.current
+    portalRoot.appendChild(currentEl)
+
+    return () => portalRoot.removeChild(currentEl)
+  }, [])
+
+  if (el.current) {
+    return ReactDOM.createPortal(children, el.current)
+  } else {
+    return null
   }
 }

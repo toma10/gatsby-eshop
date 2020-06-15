@@ -62,6 +62,7 @@ export default function CartModal() {
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-headline"
+              data-testid="cart-modal"
             >
               {items.length === 0 ? (
                 <EmptyCart close={close} />
