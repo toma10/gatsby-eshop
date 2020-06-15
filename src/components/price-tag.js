@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import cn from "classnames"
 
@@ -12,4 +13,9 @@ export default function PriceTag({ price, size = "sm" }) {
       {price / 100} KČ
     </span>
   )
+}
+
+PriceTag.propTypes = {
+  price: PropTypes.number.isRequired,
+  size: PropTypes.string,
 }

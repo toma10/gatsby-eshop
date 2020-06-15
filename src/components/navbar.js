@@ -5,6 +5,7 @@ import Container from "./container"
 import { Link } from "gatsby"
 import MenuButton from "./icon-buttons/menu-button"
 import Portal from "./portal"
+import PropTypes from "prop-types"
 import React from "react"
 import Transition from "./transition"
 import useBodyLock from "@src/hooks/use-body-lock"
@@ -52,6 +53,11 @@ function MobileNavModal({ isOpen, close }) {
       </Transition>
     </Portal>
   )
+}
+
+MobileNavModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  close: PropTypes.func.isRequired,
 }
 
 export default function Navbar() {

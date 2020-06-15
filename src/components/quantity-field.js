@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 
 export default function QuantityField({ value, onChange }) {
@@ -59,4 +60,9 @@ export default function QuantityField({ value, onChange }) {
       </button>
     </span>
   )
+}
+
+QuantityField.propTypes = {
+  value: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
 }

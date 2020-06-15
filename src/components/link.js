@@ -1,4 +1,5 @@
 import { Link as GatsbyLink } from "gatsby"
+import PropTypes from "prop-types"
 import React from "react"
 import cn from "classnames"
 
@@ -42,4 +43,12 @@ export default function Link({
   }
 
   return <GatsbyLink {...props} className={classes} />
+}
+
+Link.propTypes = {
+  variant: PropTypes.string,
+  size: PropTypes.string,
+  fullWidth: PropTypes.bool,
+  asButton: PropTypes.bool,
+  uppercase: PropTypes.bool,
 }

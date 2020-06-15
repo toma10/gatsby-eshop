@@ -1,6 +1,7 @@
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import PriceTag from "../price-tag"
+import PropTypes from "prop-types"
 import React from "react"
 
 function Product({ product }) {
@@ -20,6 +21,10 @@ function Product({ product }) {
   )
 }
 
+Product.propTypes = {
+  product: PropTypes.object.isRequired,
+}
+
 export default function ProductsList({ products }) {
   return (
     <div>
@@ -31,4 +36,8 @@ export default function ProductsList({ products }) {
       </div>
     </div>
   )
+}
+
+ProductsList.propTypes = {
+  products: PropTypes.array.isRequired,
 }

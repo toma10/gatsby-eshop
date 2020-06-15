@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import cn from "classnames"
 
@@ -42,4 +43,13 @@ export default function Button({
   }
 
   return <button type={type} {...props} className={classes} />
+}
+
+Button.propTypes = {
+  type: PropTypes.string,
+  variant: PropTypes.string,
+  size: PropTypes.string,
+  fullWidth: PropTypes.bool,
+  asButton: PropTypes.bool,
+  uppercase: PropTypes.bool,
 }

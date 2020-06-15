@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import IncrementDecrementField from "../increment-decrement-field"
 import Link from "../link"
 import PriceTag from "../price-tag"
+import PropTypes from "prop-types"
 import React from "react"
 import { stripeCheckout } from "@src/utils"
 
@@ -49,6 +50,13 @@ function CartItem({ item, removeItem, incrementQuantity, decrementQuantity }) {
   )
 }
 
+CartItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  incrementQuantity: PropTypes.func.isRequired,
+  decrementQuantity: PropTypes.func.isRequired,
+}
+
 function CartItemsList({
   items,
   removeItem,
@@ -69,6 +77,13 @@ function CartItemsList({
       ))}
     </div>
   )
+}
+
+CartItemsList.propTypes = {
+  items: PropTypes.array.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  incrementQuantity: PropTypes.func.isRequired,
+  decrementQuantity: PropTypes.func.isRequired,
 }
 
 export default function Cart({
@@ -139,4 +154,14 @@ export default function Cart({
       </div>
     </div>
   )
+}
+
+Cart.propTypes = {
+  close: PropTypes.func.isRequired,
+  items: PropTypes.array.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  clearItems: PropTypes.func.isRequired,
+  incrementQuantity: PropTypes.func.isRequired,
+  decrementQuantity: PropTypes.func.isRequired,
+  totalPrice: PropTypes.number.isRequired,
 }

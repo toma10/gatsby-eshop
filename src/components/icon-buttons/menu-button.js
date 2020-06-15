@@ -1,4 +1,5 @@
 import IconButton from "./icon-button"
+import PropTypes from "prop-types"
 import React from "react"
 
 export default function MenuButton({ onClick }) {
@@ -17,4 +18,8 @@ export default function MenuButton({ onClick }) {
       </svg>
     </IconButton>
   )
+}
+
+MenuButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
 }

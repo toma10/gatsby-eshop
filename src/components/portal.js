@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import ReactDOM from "react-dom"
 
@@ -31,4 +32,8 @@ export default function Portal({ children }) {
   } else {
     return null
   }
+}
+
+Portal.propTypes = {
+  children: PropTypes.element.isRequired,
 }

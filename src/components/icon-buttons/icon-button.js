@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import cn from "classnames"
 
@@ -13,4 +14,9 @@ export default function IconButton({ onClick, className = null, ...props }) {
       )}
     />
   )
+}
+
+IconButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
 }

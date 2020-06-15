@@ -1,5 +1,6 @@
 import CloseButton from "../icon-buttons/close-button"
 import Link from "../link"
+import PropTypes from "prop-types"
 import React from "react"
 
 export default function EmptyCart({ close }) {
@@ -38,4 +39,8 @@ export default function EmptyCart({ close }) {
       </div>
     </div>
   )
+}
+
+EmptyCart.propTypes = {
+  close: PropTypes.func.isRequired,
 }

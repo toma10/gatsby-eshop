@@ -1,6 +1,7 @@
 import Button from "../button"
 import Img from "gatsby-image"
 import PriceTag from "../price-tag"
+import PropTypes from "prop-types"
 import QuantityField from "../quantity-field"
 import React from "react"
 import { useCart } from "@src/context/cart-context"
@@ -47,4 +48,8 @@ export default function ProductDetail({ product }) {
       </div>
     </div>
   )
+}
+
+ProductDetail.propTypes = {
+  product: PropTypes.object.isRequired,
 }

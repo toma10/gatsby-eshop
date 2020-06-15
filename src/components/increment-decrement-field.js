@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 
 export default function IncrementDecrementField({
@@ -43,4 +44,10 @@ export default function IncrementDecrementField({
       </button>
     </span>
   )
+}
+
+IncrementDecrementField.propTypes = {
+  value: PropTypes.number.isRequired,
+  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func.isRequired,
 }
